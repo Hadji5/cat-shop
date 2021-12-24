@@ -1,0 +1,384 @@
+// Файл обнуляющих стилей
+@import "_nullstyle";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+
+body {
+   
+   font-family: 'Montserrat', sans-serif;
+}
+
+.main-wrapper{
+   display: flex;
+   flex-direction: column;
+
+}
+
+
+.container {
+   max-width: 1180px;
+   margin: 0 auto;
+   
+   
+}
+
+
+.header {
+   background: url(../img/header-bg.jpg) 0 0/cover no-repeat gray;
+   font-size: 18px;
+   color: white;
+   margin-bottom: 40px;
+ 
+}
+
+.transparent {
+   background: rgba(0, 0, 0, 0.7);
+   padding-top: 30px;
+}
+
+
+.headwrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.nav {
+   display: flex;
+   justify-content: space-between;
+   width: 420px;
+   margin-left: -280px;
+   
+   &__item {
+      color: white;
+   }
+
+   &__item:hover {
+      text-decoration: underline;
+   }
+}
+
+.phone {
+      text-align: right;
+
+		&__number {
+         font-size: 24px;
+         font-weight: 700;
+         margin-bottom: 7px;
+		}
+
+	
+}
+
+
+.catsum {
+   font-size: 38px;
+   font-weight: 700;
+   padding: 45px 0 75px 0;
+}
+
+
+.offer {
+   
+   flex: 1 1 auto;
+   position: relative;
+
+   &__sort {
+      margin-bottom: 42px;
+   }
+
+   &__catalog {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+   }
+
+   &__btn {
+      width: 380px;
+      height: 65px;
+      font-size: 14px;
+      text-align: center;
+      padding: 24px 0;
+      border: 1px solid gray;
+      border-radius: 10px;
+      margin: 0 auto;
+      margin-bottom: 68px;
+
+   }
+
+   &__btn button {
+      background: transparent;
+   }
+
+   &__btn:hover {
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(80, 78, 78, 0.7);
+      transition: 0.1s;
+   }
+
+   &__btn:active {
+      box-shadow: inset 0 0 10px rgba(80, 78, 78, 0.7);
+      transition: 0.5s;
+   }
+
+   &__btn-arrow {
+      width: 59px;
+      height: 59px;
+      background: #6EBBD3 url('../img/icon/arrow.png') 50% 50% no-repeat;
+      font-size: 20pzx;
+      padding: 20px;
+      position: absolute;
+      bottom: -40px;
+      right: 0;
+      cursor: pointer;
+   
+   }
+
+}
+
+
+.lable {
+   font-size: 18px;
+   font-weight: 700;
+   margin-right: 48px;
+}
+
+.select1 {
+   font-size: 18px;
+   width: 80px;
+   margin-right: 54px;
+}
+
+.select2 {
+   font-size: 18px;
+   width: 120px;
+}
+
+
+@mixin card($catfoto, $discont) {
+
+   .card {
+      position: relative;
+      width: 380px;
+      background: #F3F3F3;
+      margin-bottom: 27px;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+   
+     
+   	&__catfoto {
+         width: inherit;
+         height: 264px;
+         background: url($discont) 38px 34px no-repeat, url($catfoto) no-repeat;
+         margin-bottom: 29px;
+      }
+   
+   
+      &__like {
+         position: absolute;
+         top: 34px;
+         right: 32px;
+         width: 46px;
+         height: 46px;
+         background: url('../img/icon/like-disabled.png');
+      }
+   
+   
+      &__like:focus {
+         background: url('../img/icon/like-activ.png');
+      }
+   
+   
+       &__text {
+         margin-left: 30px;
+      }
+   
+   
+      &__title, &__price {
+         font-weight: 700;
+         font-size: 24px;
+         word-spacing: 1px;
+         letter-spacing: 0.4px;
+      }
+   
+      
+      &__title {
+         margin-bottom: 23px;
+      }
+   
+   
+      &__price {
+         margin-bottom: 29px;
+      }
+   
+      
+   	&__parameters {
+         display: flex;
+         justify-content: space-between;
+         max-width: 300px;
+         margin-bottom: 22px;
+      }
+   
+   
+      &__parameters::before {
+         content: "";
+         display: inline-block;
+         width: 4px;
+         height: 26px;
+         background: #6EBBD3;
+      }
+   
+   
+      &__parametr1 {
+         margin-left: -22px;
+      }
+   
+   
+   	&__value {
+         font-size: 16px;
+         font-weight: 700;
+   	}
+   
+      &__color {
+         font-weight: 400;
+         font-size: 12px;
+      }
+   
+   
+   	&__parametr {
+         font-size: 12px;
+   	}
+   
+   
+      &__btn-buy {
+         background: #6EBBD3;
+         text-align: center;
+         padding: 22px 0;
+         color: white;
+         font-size: 16px;
+         font-weight: 700;
+
+         
+      }
+
+     
+      &__btn-buy:hover {
+         background: #377c91;
+         transition: 0.3s;
+         cursor: pointer;
+      }
+   
+   
+      &__btn-buy:active {
+         box-shadow: inset 0 0 20px white;
+         transition: 0.05s;
+      }
+
+       &__btn-sold {
+        
+         background: #1F2021;
+         text-align: center;
+         padding: 22px 0;
+         color: white;
+         font-size: 16px;
+         font-weight: 700;
+
+         
+      }
+   
+   }
+
+}
+
+.card-1 {
+   @include card('../img/cat-1.jpg', '../img/icon/discount.png')
+}
+
+.card-2 {
+   @include card('../img/cat-2.jpg', '')
+} 
+
+.card-3 {
+   @include card('../img/cat-3.jpg', '')
+} 
+
+.card-4 {
+   @include card('../img/cat-1.jpg', '')
+} 
+
+.card-5 {
+   @include card('../img/cat-3.jpg', '../img/icon/discount.png')
+} 
+
+.card-6 {
+   @include card('../img/cat-2.jpg', '')
+} 
+
+
+.footer .container {
+   background-color: #1F2021;
+   font-size: 14px;
+   color: white;
+   
+}
+
+.footerwrapper {
+   display: flex;
+   padding: 95px 0;
+   
+}
+
+.footertitle {
+   margin: 0 70px 0 79px;
+		&__title {
+         font-size: 48px;
+         font-weight: 700;
+         margin-bottom: 38px;
+		}
+
+		&__note {
+      
+         font-size: 28px;
+         max-width: 400px;
+		}
+}
+
+.footerform {
+   max-width: 570px;
+   &__email {
+      width: 300px;
+      height: 65px;
+      border-radius: 10px;
+      margin: 0 16px 24px 0;
+      color: #000000;
+      padding-left: 33px;
+   }
+
+   &__email:hover {
+      box-shadow: inset 0 0 5px black;
+      
+   }
+
+   &__btn {
+      width: 250px;
+      height: 65px;
+      border-radius: 10px;
+      background-color: #6EBBD3;
+      font-weight: 700;
+      color: white;
+   }
+
+   &__btn:hover {
+      background-color: #267d97;
+      transition: 0.3s;
+   }
+
+   &__btn:active {
+      box-shadow: inset 0 0 20px white;
+      transition: 0.05s;
+   }
+}
+
+
